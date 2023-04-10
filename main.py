@@ -3,7 +3,8 @@ from categorie import *
 from produit import *
 from fenetre_categorie import *
 from fenetre_produit import*
-
+from exporter_csv import*
+from tkinter import messagebox
 class App:
     def __init__(self, master):
         self.master = master
@@ -21,6 +22,8 @@ class App:
         self.open_button_categorie = Button(master, text="ouvrir la liste des categories", command=self.liste_categorie)
         self.open_button_categorie.grid(row=4, column=1)
 
+        self.export_button = Button(master,text="exporter les donnes en csv",command= self.export_csv)
+        self.export_button.grid(row=5, column = 1)
     def open_categorie(self):
         self.master.withdraw()  # cacher la fenêtre principale
         create_window = Toplevel(self.master)
@@ -37,13 +40,16 @@ class App:
         self.master.withdraw()  # cacher la fenêtre principale
         liste_window = Toplevel(self.master)
         liste_window.protocol("WM_DELETE_WINDOW", lambda: self.on_close(liste_window))
-        affiche_produit(liste_window)
+        AfficheProduit(liste_window)
 
     def liste_categorie(self):
         self.master.withdraw()  # cacher la fenêtre principale
         liste_categorie_window = Toplevel(self.master)
         liste_categorie_window.protocol("WM_DELETE_WINDOW", lambda: self.on_close(liste_categorie_window))
         affiche_categorie(liste_categorie_window)
+    def export_csv(self):  
+        export_window = messagebox.showinfo("Succès", f"produit exporté vers le fichiers produits.csv ")
+        ExportCSV(export_window)
 
     def on_close(self, window):
         window.destroy()  # détruire la fenêtre actuelle

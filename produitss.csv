@@ -1,0 +1,10 @@
+id	nom	description	prix	quantite	id_categorie
+1	Téléviseur LG	Téléviseur LED 4K 55 pouces	799	10	1
+2	T-shirt blanc	T-shirt unisexe en coton bio	19	50	2
+3	Puzzle en bois	Puzzle 100 pièces pour enfants	9	20	3
+4	Chocolat noir	Tablette de chocolat noir bio 70%	4	100	4
+5	Ordinateur portable ASUS	Ordinateur portable 15 pouces	999	5	1
+6	Robe de soirée	Robe de soirée longue en satin	129	15	2
+7	Lego Star Wars	Boîte de construction Lego Star Wars	49	30	3
+8	Huile d'olive	Bouteille d'huile d'olive extra vierge 1 L	8	80	4
+
